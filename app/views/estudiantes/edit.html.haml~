@@ -1,0 +1,13 @@
+%h2 Editar Estudiante #{@estudiante.nombre}
+=form_tag estudiante_path(@estudiante), :method =>:put do
+  = label :estudiante, :nombre, 'Nombre'
+  = text_field :estudiante, :nombre
+  = label :estudiante, :carrera, 'Carrera'
+  = select :estudiante, :Carrera, ['Redes', 'Tele', 'Control', 'Mecanica']
+
+  = label :estudiante, :fecha_ingreso, 'Ingresado en'
+  = date_select :estudiante, :fecha_ingreso
+  %br
+  %br
+  = submit_tag 'Actualizar'
+

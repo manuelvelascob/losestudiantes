@@ -1,0 +1,16 @@
+%h2 Detalles sobre #{@estudiante.nombre}
+%ul#detalles
+  %li
+    Carrera:
+    =@estudiante.carrera
+  %li
+    Ingresado el:
+    = @estudiante.fecha_ingreso.strftime("%B %d, %Y")
+%h3 Observaciones:
+%p#observaciones= @estudiante.observaciones
+= link_to 'Regresar a la lista de estudiantes',estudiantes_path
+= link_to 'Editar', edit_estudiante_path(@estudiante)
+= button_to 'Eliminar', estudiante_path(@estudiante), :method => :delete, :confirm => 'Estas seguro?'
+
+
+

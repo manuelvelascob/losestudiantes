@@ -1,0 +1,13 @@
+%h2 Nuevo Estudiante!
+=form_tag estudiantes_path, :method =>:post do
+  = label :estudiante, :nombre, 'Nombre'
+  = text_field :estudiante, :nombre
+  = label :estudiante, :carrera, 'Carrera'
+  = select :estudiante, :carrera, ['Redes', 'Tele', 'Control', 'Mecanica']
+
+  = label :estudiante, :fecha_ingreso, 'Ingresado en'
+  = date_select :estudiante, :fecha_ingreso
+  %br
+  %br
+  = submit_tag 'Guardar'
+
